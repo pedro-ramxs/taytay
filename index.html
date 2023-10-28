@@ -91,35 +91,116 @@
 					paixão por Taylor Swift. Sinta-se à vontade para interagir, comentar,
 					compartilhar e fazer parte desta jornada emocionante.
 				</p>
-				<!-- AQUI NESSA IMAGEM DA PRA FAZER UM CARROSEL -->
-				<img src="./assets/img/home.png" alt="Taylor Swift" class="img-fluid" />
+				<div class="row justify-content-center">
+					<div class="col-md-8 col-12">
+						<div id="carouselExampleIndicators" class="carousel slide">
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<img
+										src="assets/img/home.png"
+										class="d-block w-100"
+										alt="..."
+									/>
+								</div>
+								<div class="carousel-item">
+									<img
+										src="assets/img/home3.png"
+										class="d-block w-100"
+										alt="..."
+									/>
+								</div>
+								<div class="carousel-item">
+									<img
+										src="assets/img/home2.png"
+										class="d-block w-100"
+										alt="..."
+									/>
+								</div>
+								<div class="carousel-item">
+									<img
+										src="assets/img/home4.png"
+										class="d-block w-100"
+										alt="..."
+									/>
+								</div>
+							</div>
+							<button
+								class="carousel-control-prev"
+								type="button"
+								data-bs-target="#carouselExampleIndicators"
+								data-bs-slide="prev"
+							>
+								<span
+									class="carousel-control-prev-icon"
+									aria-hidden="true"
+								></span>
+								<span class="visually-hidden">Previous</span>
+							</button>
+							<button
+								class="carousel-control-next"
+								type="button"
+								data-bs-target="#carouselExampleIndicators"
+								data-bs-slide="next"
+							>
+								<span
+									class="carousel-control-next-icon"
+									aria-hidden="true"
+								></span>
+								<span class="visually-hidden">Next</span>
+							</button>
+						</div>
+					</div>
+				</div>
 			</section>
 			<section class="container-fluid mt-5 pb-5">
 				<div class="row">
 					<div class="col-md-6 col-12">
-						Não se esqueça de se inscrever para receber nossas atualizações por
-						e-mail e nos seguir nas redes sociais para ficar sempre atualizado.
-						Junte-se a nós enquanto exploramos o incrível universo da música, do
-						talento e da inspiração que é Taylor Swift. Vamos começar essa
-						jornada juntos!
+						Não se esqueça de se inscrever na nossa
+						<span class="fst-italic">newsletter</span> para receber nossas
+						atualizações por e-mail e nos seguir nas redes sociais para ficar
+						sempre atualizado. Junte-se a nós enquanto exploramos o incrível
+						universo da música, do talento e da inspiração que é Taylor Swift.
+						Vamos começar essa jornada juntos!
 						<div class="d-flex mt-4" style="font-size: 30px">
-							<i class="text-secondary-emphasis bi bi-instagram"></i>
-							<i class="text-secondary-emphasis bi bi-facebook ms-2"></i>
-							<i class="text-secondary-emphasis bi bi-snapchat ms-2"></i>
-							<i class="text-secondary-emphasis bi bi-twitter ms-2"></i>
+							<a
+								href="#"
+								data-bs-toggle="tooltip"
+								data-bs-title="@taylorswiftempeso"
+							>
+								<i class="text-secondary-emphasis bi bi-instagram"></i>
+							</a>
+							<a
+								href="#"
+								data-bs-toggle="tooltip"
+								data-bs-title="Taylor Swift Em Peso &reg;"
+							>
+								<i class="text-secondary-emphasis bi bi-facebook ms-2"></i>
+							</a>
+							<a href="#" data-bs-toggle="tooltip" data-bs-title="@ts.empeso">
+								<i class="text-secondary-emphasis bi bi-snapchat ms-2"></i>
+							</a>
+							<a
+								href="#"
+								data-bs-toggle="tooltip"
+								data-bs-title="@TaylorSwiftEmPeso"
+							>
+								<i class="text-secondary-emphasis bi bi-twitter ms-2"></i>
+							</a>
 						</div>
 					</div>
 					<div class="col-md-6 col-12">
 						<!-- AQUI DA PRA ADICIONAR VALIDACAO NESSE FORM -->
-						<form class="mb-3">
+						<form id="form-newsletter" class="mb-3 needs-validation" novalidate>
 							<div class="form-floating mb-3">
 								<input
 									placeholder="Ex.: Taylor Swift"
 									id="nome"
 									type="text"
 									class="form-control"
+									required
 								/>
 								<label for="nome">Nome:</label>
+								<div class="invalid-feedback">Insira um nome válido!</div>
 							</div>
 							<div class="form-floating mb-3">
 								<input
@@ -127,20 +208,63 @@
 									id="email"
 									type="email"
 									class="form-control"
+									required
 								/>
 								<label for="email">E-mail:</label>
+								<div class="invalid-feedback">Insira um email válido!</div>
 							</div>
-							<button class="btn btn-primary w-100">Inscrever-se</button>
+							<button class="btn btn-primary w-100" type="submit">
+								Inscrever-se
+							</button>
 						</form>
 					</div>
 				</div>
 			</section>
 		</main>
 
+		<div
+			class="modal fade"
+			id="modal"
+			tabindex="-1"
+			aria-labelledby="modalLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="modalLabel">
+							Enviado com sucesso!
+						</h1>
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						></button>
+					</div>
+					<div class="modal-body">
+						Seus dados foram enviados com sucesso! <br />
+						Agora você receberá atualizações e informações sobre Taylor Swift em
+						seu e-mail!
+					</div>
+					<div class="modal-footer">
+						<button
+							type="button"
+							class="btn btn-secondary"
+							data-bs-dismiss="modal"
+						>
+							Legal!
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
 			crossorigin="anonymous"
 		></script>
+		<script src="assets/js/main.js"></script>
 	</body>
 </html>
